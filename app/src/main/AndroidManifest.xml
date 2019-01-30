@@ -9,13 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".service.MainActivity">
+        <activity android:name=".service.LauncherActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER"></category>
                 <action android:name="android.intent.action.MAIN"></action>
             </intent-filter>
         </activity>
-        <service android:name=".service.LongRunningService"></service>
+        <activity android:name=".service.recycler.RecyclerActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="android.intent.action.MAIN"></action>
+            </intent-filter>
+        </activity>
+        <activity android:name=".service.services.BoundService"></activity>
+        <activity android:name=".service.services.IntentSeriviceActivity"></activity>
+        <service android:name=".service.services.LongRunningService"></service>
+        <service android:name=".service.services.MyIntentServices"></service>
     </application>
 
 </manifest>

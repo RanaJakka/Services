@@ -1,4 +1,4 @@
-package com.example.rxj8934.recyclerview.service
+package com.example.rxj8934.recyclerview.service.services
 
 import android.app.Service
 import android.content.Intent

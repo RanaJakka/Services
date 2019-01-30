@@ -1,4 +1,4 @@
-package com.example.rxj8934.recyclerview.service
+package com.example.rxj8934.recyclerview.service.services
 
 import android.content.ComponentName
 import android.content.Context
@@ -12,8 +12,8 @@ import android.view.View
 import android.widget.TextView
 import com.example.rxj8934.recyclerview.R
 
-class MainActivity: AppCompatActivity() {
-    private val boundserviceConnection:BoundServiceConnection
+class BoundService: AppCompatActivity() {
+    private val boundserviceConnection: BoundServiceConnection
     private lateinit var updateTextView:TextView
     init {
         boundserviceConnection=BoundServiceConnection()
@@ -35,7 +35,7 @@ class MainActivity: AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val serviceIntent= Intent(this@MainActivity,LongRunningService::class.java)
+        val serviceIntent= Intent(this@BoundService, LongRunningService::class.java)
         bindService(serviceIntent,boundserviceConnection, Context.BIND_AUTO_CREATE)
     }
 
@@ -47,7 +47,7 @@ class MainActivity: AppCompatActivity() {
     }
     inner class BoundServiceConnection:ServiceConnection{
         private var isConnected=false
-        private var longRunningService:LongRunningService?=null
+        private var longRunningService: LongRunningService?=null
         override fun onServiceDisconnected(name: ComponentName?) {
             isConnected=false
         }
