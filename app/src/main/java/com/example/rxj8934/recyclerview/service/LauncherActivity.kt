@@ -1,6 +1,7 @@
 package com.example.rxj8934.recyclerview.service
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -8,32 +9,49 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.TextView
-import com.example.rxj8934.recyclerview.R
-import com.example.rxj8934.recyclerview.service.recycler.RecyclerActivity
+import com.example.rxj8934.R
+import com.example.rxj8934.recyclerview.service.fragments.MyFragmentActivity
+import com.example.rxj8934.recyclerview.service.handlers.example1.HandlerActivity
 import com.example.rxj8934.recyclerview.service.services.BoundService
 import com.example.rxj8934.recyclerview.service.services.IntentSeriviceActivity
 import kotlinx.android.synthetic.main.launcher_activity.*
-import java.util.*
 
 class LauncherActivity:AppCompatActivity() {
-    private val conceptTitle= arrayOf<String>("Bound Service","IntentService")
+    private lateinit var conceptTitle:Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.launcher_activity)
+        conceptTitle= resources.getStringArray(R.array.concepts)
         conceptsRecycler.layoutManager=LinearLayoutManager(this)
         val click=object :AdapterView.OnItemClickListener{
             override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when(conceptTitle[position]){
                     "Bound Service"->{
                         startActivity(Intent(this@LauncherActivity,BoundService::class.java))
-
-
                     }
                     "IntentService"->{
                         startActivity(Intent(this@LauncherActivity,IntentSeriviceActivity::class.java))
+                    }
+                    "Fragments"->{
+                        startActivity(Intent(this@LauncherActivity,MyFragmentActivity::class.java))
+                    }
+                    "BluePrintOfHandlers"->{
+
+                        /*
+                        // for deeplink actvity
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse("https://rana.com/jakka")
+                        startActivity(intent)
+                        */
+
+                        // retrofit
+                        val intent = Intent(Intent.ACTION_VIEW)
+                        intent.data = Uri.parse("https://rana.com/network")
+                        startActivity(intent)
+
+                        //startActivity(Intent(this@LauncherActivity,HandlerActivity::class.java))
                     }
 
                 }

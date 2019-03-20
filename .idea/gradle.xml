@@ -8,7 +8,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Rxjava" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base_feature" />
+            <option value="$PROJECT_DIR$/instantapp" />
+            <option value="$PROJECT_DIR$/mvvm2" />
+            <option value="$PROJECT_DIR$/myapplication" />
+            <option value="$PROJECT_DIR$/network" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

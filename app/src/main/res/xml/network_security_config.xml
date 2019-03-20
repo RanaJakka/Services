@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+Dev only :
+Put the attribute android:networkSecurityConfig="@xml/network_security_config" to <application> at Manifest.xml
+And Change the min SDK to 24 to get the charles proxy show the https traffic
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">http://dummy.restapiexample.com/</domain>
+    </domain-config>
+</network-security-config>

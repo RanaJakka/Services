@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import com.example.rxj8934.recyclerview.R
+import com.example.rxj8934.R
 
 class BoundService: AppCompatActivity() {
     private val boundserviceConnection: BoundServiceConnection
@@ -21,7 +21,7 @@ class BoundService: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_network)
         updateTextView=findViewById(R.id.timerService)
         updateTextView.setOnClickListener(View.OnClickListener {
             boundserviceConnection.boundServices()?.let {
