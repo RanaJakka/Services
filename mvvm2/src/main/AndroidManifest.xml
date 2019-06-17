@@ -20,7 +20,7 @@
             <category android:name="android.intent.category.DEFAULT" />
             <data
                 android:host="rana.com"
-                android:path="/jakka"
+                android:path="/mvvmActivity"
                 android:scheme="https"/>
 
         </intent-filter>
